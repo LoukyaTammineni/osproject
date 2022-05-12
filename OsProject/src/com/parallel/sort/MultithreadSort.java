@@ -14,8 +14,9 @@ public class MultithreadSort {
 
 	/** Threshold to apply insertion sort */
 	private static final int THRESHOLD = 100;
-	private static Random random = new Random();
-    private static final int ARRAY_SIZE = random.nextInt(900000);
+	//private static Random random = new Random();
+    private static final int ARRAY_SIZE = 1000000;
+    		//random.nextInt(900000);
 
 	//////////////////////////////////////////////////////// quicksort begin
 
