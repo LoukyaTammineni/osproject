@@ -13,9 +13,9 @@ import java.util.*;
 public class MultithreadSort {
 
 	/** Threshold to apply insertion sort */
-	private static final int THRESHOLD = 100;
+	private static final int THRESHOLD = 1000;
 	private static Random random = new Random();
-    private static final int ARRAY_SIZE = random.nextInt(900000);
+    private static final int ARRAY_SIZE = random.nextInt(900080);
 
 	//////////////////////////////////////////////////////// quicksort begin
 
@@ -275,7 +275,7 @@ public class MultithreadSort {
 		// Get the current time before sorting
 		startTime = System.currentTimeMillis();
 
-		//try {
+		try {
 			fjp.invoke(mergeSort);
 			/*System.out.print("Sorted array Merge = ");
 			for(int n:array1)
@@ -284,7 +284,8 @@ public class MultithreadSort {
 				System.out.print(" ");
 			}
 	        System.out.print("\n");*/
-		/*}catch(StackOverflowError e)
+		}
+		catch(StackOverflowError e)
 		{
 			System.out.println("Stack overflow error!\n");
 			//e.printStackTrace();
@@ -294,7 +295,7 @@ public class MultithreadSort {
 			System.out.println("Out of memory error!\n");
 			//e.printStackTrace();
 			return;
-		}*/
+		}
 
 		// Get the current time after sorting
 		endTime = System.currentTimeMillis();

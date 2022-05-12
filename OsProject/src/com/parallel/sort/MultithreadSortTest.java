@@ -2,6 +2,7 @@ package com.parallel.sort;
 
 
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Random;
@@ -20,9 +21,8 @@ import com.parallel.sort.MultithreadSort.QuickSort;
 public class MultithreadSortTest {
 	
 
-	private MultithreadSort multithreadSort;
 	ForkJoinPool testPool = new ForkJoinPool();
-	//MultithreadedSorting multithreadedtest;
+	MultithreadSort multithreadedtest;
 	
 	//creating an array of random size
 	private static Integer[] createTestArray(final int size) {
@@ -45,13 +45,13 @@ public class MultithreadSortTest {
 	}
 	
     //Printing of an array
-	private void printForMe(Integer[] arr) {
+	/*private void printForMe(Integer[] arr) {
 		for(int n:arr){	
 			System.out.print(n);
 			System.out.print(" ");
 		}
 		System.out.print("\n");
-	}
+	}*/
 	
 	
 	///////////////////////////.....................Quick Sort testing................////////////////////////
@@ -372,6 +372,16 @@ public class MultithreadSortTest {
 		Assert.assertEquals(sortedArray, Arrays.toString(randomTestArray));
 				
 	}
+	
+	////...................Testing Create array module............////////////
+	
+	@Test
+	public void test_create_array_function() {
+		new MultithreadSort();
+		Integer[] testArray = MultithreadSort.createArray(1000);
+		Assert.assertEquals(1000, Array.getLength(testArray));
+	}
+	
 	
 	////////..................Exceptions............../////////////
 	
